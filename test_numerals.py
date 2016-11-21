@@ -264,6 +264,24 @@ class Euros(unittest.TestCase):
             numerals.importe_en_euros(0.01),
             'cero euros con un céntimo'
             )
+    
+    def test_un_euro(self):
+        self.assertEqual(
+            numerals.importe_en_euros(1),
+            'un euro'
+            )
+
+    def test_cero_euros(self):
+        self.assertEqual(
+            numerals.importe_en_euros(0),
+            'cero euros'
+            )
+
+    def test_231_euros_con_75_centimos(self):
+        self.assertEqual(
+            numerals.importe_en_euros(231.75),
+            'doscientos treinta y un euros con setenta y cinco céntimos'
+            )
 
     def test_centimos_01_a_20(self):
         self.assertEqual(numerals.importe_en_euros(0.01), 'cero euros con un céntimo')

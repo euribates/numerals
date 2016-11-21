@@ -136,7 +136,10 @@ def importe_en_euros(importe):
     '''
     total_en_centimos = int(round(importe*100))
     euros, centimos = divmod(total_en_centimos, 100)
-    buff = [numeral(euros), 'euros']
+    num_euros = numeral(euros)
+    if num_euros.endswith('uno'):
+        num_euros = num_euros[0:-1]
+    buff = [num_euros, 'euro' if euros == 1 else 'euros']
     if centimos:
         num_cents = numeral(centimos)
         if num_cents.endswith('uno'):
