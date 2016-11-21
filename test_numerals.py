@@ -273,7 +273,7 @@ class Euros(unittest.TestCase):
 
     def test_cero_euros(self):
         self.assertEqual(
-            numerals.importe_en_euros(0),
+            numerals.importe_en_euros(0.0),
             'cero euros'
             )
 
